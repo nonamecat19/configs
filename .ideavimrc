@@ -1,0 +1,70 @@
+" Source your .vimrc
+source ~/.vimrc
+
+" IDEA stuff
+set ideajoin
+set idearefactormode=keep
+set ideamarks
+
+let g:mapleader=" "
+
+" Plugins
+set NERDTree
+
+" Mapping
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Search
+map <leader>fc <Action>(FindInPath)
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(HelpDiagnosticTools)
+map <leader>fg <Action>(FindInPath)
+map <leader>ft <Action>(ActivateTODOToolWindow)
+" Git
+map <leader>gg <Action>(CheckinProject)
+map <leader>gp <Action>(Vcs.UpdateProject)
+map <leader>gP <Action>(Vcs.Push)
+map <leader>gb <Action>(Annotate)
+" Debug
+map <leader>Db <Action>(ToggleLineBreakpoint)
+map <leader>DB <Action>(ToggleLineBreakpoint)
+map <F5> <Action>(Debug)
+map <F6> <Action>(EvaluateExpression)
+map <F10> <Action>(StepOver)
+map <F11> <Action>(StepInto)
+map <F12> <Action>(StepOut)
+
+" Test
+map <leader>ot <Action>(GotoTest)
+map <leader>T <Action>(RunClass)
+
+" Completion
+map <leader>ot <Action>(GotoCompletion)
+
+" LSP
+map gD <Action>(GotoTypeDeclaration)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gr <Action>(GotoDeclaration)
+map <leader>rn <Action>(RenameElement)
+
+map <leader>oc <Action>(ReformatCode)
+map <leader>oi <Action>(OptimizeImports)
+map <leader>oa <Action>(ReformatCode)<Action>(OptimizeImports)
+
+map <leader>k <Action>(QuickJSDoc)
+imap <C-s> <Action>(ParameterInfo)
+map <C-s> <Action>(ParameterInfo)
+map <leader>s <Action>(GotoSymbol)
+map <leader>S <Action>(GotoSymbol)
+
+map <leader>a <Action>(ShowIntentionActions)
+
+" Outline
+map <leader>O <Action>(FileStructurePopup)
+
+map <leader><leader>T <Action>(VimFindActionIdAction)
+
+nnoremap <c-f> :action GotoFile<CR>
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>

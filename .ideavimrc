@@ -10,6 +10,7 @@ let g:mapleader=" "
 
 " Plugins
 set NERDTree
+set sneak
 
 " Mapping
 map <leader>e <Action>(ActivateProjectToolWindow)
@@ -52,7 +53,6 @@ map <leader>oc <Action>(ReformatCode)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>oa <Action>(ReformatCode)<Action>(OptimizeImports)
 
-map <leader>k <Action>(QuickJSDoc)
 imap <C-s> <Action>(ParameterInfo)
 map <C-s> <Action>(ParameterInfo)
 map <leader>s <Action>(GotoSymbol)
@@ -65,6 +65,14 @@ map <leader>O <Action>(FileStructurePopup)
 
 map <leader><leader>T <Action>(VimFindActionIdAction)
 
-nnoremap <c-f> :action GotoFile<CR>
+nnoremap <c-f> :action FindInPath<CR>
+vnoremap <c-f> :action FindInPath<CR>
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+
+" Tabs
+nmap <c-h> <Action>(PreviousTab)
+nmap <c-l> <Action>(NextTab)
+
+"Code generation
+map <leader>ii <Action>(ES6.Generate.Index)

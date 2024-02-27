@@ -10,6 +10,9 @@ let g:mapleader=" "
 
 " Plugins
 set NERDTree
+set highlightedyank
+let g:highlightedyank_highlight_duration = "5000"
+let g:highlightedyank_highlight_color = "rgba(57, 62, 65, 255)"
 set sneak
 
 " Mapping
@@ -21,11 +24,13 @@ map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(HelpDiagnosticTools)
 map <leader>fg <Action>(FindInPath)
 map <leader>ft <Action>(ActivateTODOToolWindow)
+
 " Git
 map <leader>gg <Action>(CheckinProject)
 map <leader>gp <Action>(Vcs.UpdateProject)
 map <leader>gP <Action>(Vcs.Push)
 map <leader>gb <Action>(Annotate)
+
 " Debug
 map <leader>Db <Action>(ToggleLineBreakpoint)
 map <leader>DB <Action>(ToggleLineBreakpoint)
@@ -67,12 +72,47 @@ map <leader><leader>T <Action>(VimFindActionIdAction)
 
 nnoremap <c-f> :action FindInPath<CR>
 vnoremap <c-f> :action FindInPath<CR>
+imap     <c-f> :action FindInPath<CR>
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 
 " Tabs
-nmap <c-h> <Action>(PreviousTab)
-nmap <c-l> <Action>(NextTab)
+nmap <c-n> <Action>(PreviousTab)
+nmap <c-m> <Action>(NextTab)
 
-"Code generation
+" Code generation
 map <leader>ii <Action>(ES6.Generate.Index)
+map <c-s> :NERDTreeFind<CR>
+
+
+vmap <S-J> <Action>(MoveLineDown)
+vmap <S-K> <Action>(MoveLineUp)
+
+nmap ]b <Action>(GotoNextBookmark)
+nmap [b <Action>(GotoPreviousBookmark)
+
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+
+nmap zh <Action>(MoveTabDown)
+nmap zv <Action>(MoveTabRight)
+nmap zs <Action>(MoveEditorToOppositeTabGroup)
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap zo <Action>(MaximizeEditorInSplit)
+
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d

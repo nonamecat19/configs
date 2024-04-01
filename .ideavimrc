@@ -19,10 +19,8 @@ set sneak
 map <leader>e <Action>(ActivateProjectToolWindow)
 
 " Search
-map <leader>fc <Action>(FindInPath)
 map <leader>ff <Action>(GotoFile)
 map <leader>fg <Action>(HelpDiagnosticTools)
-map <leader>fg <Action>(FindInPath)
 map <leader>ft <Action>(ActivateTODOToolWindow)
 
 " Git
@@ -52,13 +50,13 @@ map gD <Action>(GotoTypeDeclaration)
 map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
 map gr <Action>(GotoDeclaration)
+map gb <Action>(Back)
 map <leader>rn <Action>(RenameElement)
 
 map <leader>oc <Action>(ReformatCode)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>oa <Action>(ReformatCode)<Action>(OptimizeImports)
 
-imap <C-s> <Action>(ParameterInfo)
 map <C-s> <Action>(ParameterInfo)
 map <leader>s <Action>(GotoSymbol)
 map <leader>S <Action>(GotoSymbol)
@@ -70,20 +68,18 @@ map <leader>O <Action>(FileStructurePopup)
 
 map <leader><leader>T <Action>(VimFindActionIdAction)
 
-nnoremap <c-f> :action FindInPath<CR>
-vnoremap <c-f> :action FindInPath<CR>
-imap     <c-f> :action FindInPath<CR>
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
-nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+map <C-F> <Action>(FindInPath)
+imap <C-F> <Action>(FindInPath)
+map <C-Z> <Action>(ToggleDistractionFreeMode)
+map <C-T> <Action>(ActivateTerminalToolWindow)
 
 " Tabs
-nmap <c-n> <Action>(PreviousTab)
-nmap <c-m> <Action>(NextTab)
+map <C-N> <Action>(PreviousTab)
+map <C-M> <Action>(NextTab)
 
 " Code generation
 map <leader>ii <Action>(ES6.Generate.Index)
 map <c-s> :NERDTreeFind<CR>
-
 
 vmap <S-J> <Action>(MoveLineDown)
 vmap <S-K> <Action>(MoveLineUp)
@@ -97,22 +93,37 @@ nmap [c <Action>(VcsShowPrevChangeMarker)
 nmap ]e <Action>(GotoNextError)
 nmap [e <Action>(GotoPreviousError)
 
-nmap zh <Action>(MoveTabDown)
-nmap zv <Action>(MoveTabRight)
-nmap zs <Action>(MoveEditorToOppositeTabGroup)
+map zh <Action>(MoveTabDown)
+map zv <Action>(MoveTabRight)
+map zs <Action>(MoveEditorToOppositeTabGroup)
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
 
-nmap zo <Action>(MaximizeEditorInSplit)
+map zo <Action>(MaximizeEditorInSplit)
 
 nnoremap x "_x
+vnoremap x "_x
+
 nnoremap d "_d
-nnoremap D "_D
 vnoremap d "_d
 
+nnoremap D "_D
+vnoremap D "_D
+
 nnoremap <leader>d ""d
-nnoremap <leader>D ""D
 vnoremap <leader>d ""d
+
+nnoremap <leader>D ""D
+vnoremap <leader>D ""D
+
+nmap <C-X> <Action>(CloseEditor)
+vmap <C-X> <Action>(CloseEditor)
+
+map <C-O> <Action>(Back)
+map <C-P> <Action>(Forward)
+
+map <C-U> <C-U> zz
+map <C-D> <C-D> zz

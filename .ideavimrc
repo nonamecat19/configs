@@ -39,7 +39,7 @@ map <F11> <Action>(StepInto)
 map <F12> <Action>(StepOut)
 
 " Test
-map <leader>ot <Action>(GotoTest)
+map <leader>gt <Action>(GotoTest)
 map <leader>T <Action>(RunClass)
 
 " Completion
@@ -119,11 +119,11 @@ vnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>D ""D
 
-nmap <C-X> <Action>(CloseEditor)
-vmap <C-X> <Action>(CloseEditor)
+nmap <C-B> <Action>(CloseEditor)
+vmap <C-B> <Action>(CloseEditor)
 
 map <C-O> <Action>(Back)
 map <C-P> <Action>(Forward)
 
 map <C-U> <C-U> zz
-map <C-D> <C-D> zz
+map <C-D> <C-D> zz

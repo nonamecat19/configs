@@ -1,0 +1,12 @@
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-completions
+  fzf-tab
+  colored-man-pages
+  history-substring-search
+  fast-syntax-highlighting
+  git-open
+  zsh-you-should-use
+)
